@@ -1,5 +1,5 @@
 # Get-Random-Recommended-Video
-Get's 100 random recommended video's on youtube, when given a video ID to start from.
+Get (by default) 100 random recommended videos on youtube, when given a video ID to start from.
 
 
 usage:
