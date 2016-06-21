@@ -8,10 +8,14 @@ var parseArray = "";
 var videoURL = "ouZQ7rgAq-I";
 var lastVideo = "";
 var i = 0;
+var videoCount = 99;
 
 //if given a command line argument, use it as the videoURL
-var args = process.argv.slice(2);
-if (args) { videoURL = args; }
+var arguments = process.argv.slice(2);
+if (arguments[0]) { videoURL = arguments[0]; }
+
+//if given a number, run the script that many times
+if (arguments[1]) { videoCount = arguments[1] ; }
 
 function getNextVideo(videoId) {
 parseString = "";    
@@ -40,7 +44,7 @@ res.on('end', (e) => {
     
     console.log(parsedData.items[randomVideo].snippet.title +" - "+ videoURL);   
     i++;
-    if (i < 100) {    getNextVideo(videoURL); }
+    if (i < videoCount) {    getNextVideo(videoURL); }
 });       
  
     
